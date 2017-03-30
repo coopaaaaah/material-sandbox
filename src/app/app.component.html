@@ -1,3 +1,23 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar style="background-color: orange; color: white;">
+  <span>Message Sandbox</span>
+</md-toolbar>
+
+<div style="height: 10px;"></div>
+
+<md-grid-list cols="6" rowHeight="100px">
+  <md-grid-tile
+    *ngFor="let message of messages"
+    [ngClass]="{selected_item: message.isSelected, unselected_item: !message.isSelected}"
+    [colspan]="message.cols"
+    [rowspan]="message.rows"
+    (click)="toggleSelection(message)"
+    (dblclick)="openDialog(message)">
+    <div>
+      {{message.text}}
+      {{message.type}}
+    </div>
+  </md-grid-tile>
+</md-grid-list>
+
+<h2>Selected Items: </h2>
+<div *ngFor="let item of selected">{{item.type}}</div>

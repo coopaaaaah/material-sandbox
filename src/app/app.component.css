@@ -1,0 +1,23 @@
+.selected_item {
+  border: inset;
+  background-color: #e5e5e5;
+  -webkit-transition: background-color 200ms ease;
+  -ms-transition: background-color 200ms ease;
+  transition: background-color 200ms ease;
+}
+
+.unselected_item {
+  border: outset;
+  background-color: white;
+  -webkit-transition: background-color 200ms ease;
+  -ms-transition: background-color 200ms ease;
+  transition: background-color 200ms ease;
+}
+
+.error_item {
+  color: red;
+}
+
+md-icon {
+  cursor: pointer
+}
